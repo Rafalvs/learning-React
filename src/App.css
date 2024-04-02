@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/**/
+
+nav {
+  display: flex;
+  min-height: 70px;
+  width: 100%;
+  background: maroon;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex; 
+  align-items: center;
+}
+
+.nav-links li {
+  margin-right: 25px;
+}
+
+.nav-links li:last-child {
+  margin-right: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  padding: 2px 4px;
+  border: solid black 1px;
+}
+
+.nav-links a:hover, .nav-links-2 a:hover {
+  background-color: brown;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+      flex-direction: column;
+  }
+
+  .nav-links li {
+      margin-bottom: 10px;
+      margin-right: 0;
+  }
+}
+
+#logo {
+  padding: 1%;
+  font-size: 2em;
+  font-weight: bold;
+  width: 100%;
+  color: white;
+  padding: 3px;
+  text-shadow: 0 0 3px black, 0 0 5px black;
+}
+
+.profileBox {
+  min-width: 40px;
+  display: flex;
+  height: 40px;
+  min-width: 170px;
+  width: 11%;
+  padding: 5px;
+  border: solid 1px black;
+  position: absolute;
+  left: 70%;
+  justify-content: space-between;
+}
+
+.profileBox h3 {
+  float: left;
+  color: white;
+  text-shadow: 0 0 3px black, 0 0 5px black;
+}
+
+#profileImg {
+  border-radius: 50%;
+  height: 40px;
+  margin: -6px 2px;
+  border: solid black 1px;
+}
+
+#profilePic {
+  margin: 10px;
+  border: solid black 1px;
+  border-radius: 50%;
+}
+
+/**/
+
+form {
+  margin: 20px;
+}
+
+#dont {
+  padding: 3px;
+  margin-top: 26px;
+  margin-bottom: 26px;
+}
+
+button {
+  margin: 4px 2px;
+  padding: 2px 2px;
+  border: solid black 1px;
+}
+
+button:hover {
+  color: rgb(45, 125, 201);
+  cursor: pointer;
+}
+
+.thistleBttn {
+  color: black;
+  background-color: thistle;
+}
+
+.khakiBttn {
+  color: black;
+  background-color: khaki;
+}
+
+.sblueBttn {
+  color: black;
+  background-color: skyblue;
+}
+
+.lgreenBttn {
+  color: black;
+  background-color: lightgreen;
+}
+
+.lsalmonBttn {
+  color: black;
+  background-color: lightsalmon;
+}
+
+input {
+  outline: none;
+  border: solid black 1px;
+}
+
+input:hover {
+  background-color: rgb(228, 228, 228);
+}
+
+input:focus {
+  background-color: rgb(228, 228, 228);
+}
+
+.productBox {
+  justify-content: center;
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.productBox li {
+  text-align: center;
+}
+
+.productBox a {
+  color: black;
+  text-decoration: none;
+}
+
+.productImage {
+  border: solid black 1px;
+  height: 50px;
+  width: 200px;
+}
+
+.productImage:hover {
+  border: solid red 1px;
+}
+
+.productLink {
+  display: inline-block;
+  max-height: 50px;
+  justify-content: center;
+  text-align: center;
+  width: fit-content;
+}
+
+.productLink:hover {
+  color: red;
+}
+
+/**/
+
+footer {
+  display: flex;
+  width: 100%;
+  height: 40px;
+  background: maroon;
+  justify-content: center;
+}
+
+.nav-links-2 {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex; 
+  align-items: center;
+}
+
+.nav-links-2 li {
+  margin-right: 25px;
+}
+
+.nav-links-2 li:last-child {
+  margin-right: 0;
+}
+
+.nav-links-2 a {
+  text-decoration: none;
+  color: white;
+  padding: 2px 4px;
+  border: solid black 1px;
+}
