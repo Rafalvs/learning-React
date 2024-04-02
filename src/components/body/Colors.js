@@ -3,6 +3,8 @@ import Numbers from "./Numbers";
 import Talker from "./Props0";
 import Products from "./Products";
 
+const colorNames = ['Thistle', 'Khaki', 'Skyblue', 'Lightgreen', 'Lightsalmon'];
+
 export default function Colors() {
 
     const [color, setColor] = useState('lightblue');
@@ -16,6 +18,8 @@ export default function Colors() {
     const handleInputChange = (e) => {
         setInputValue(e.target.value); // Update the inputValue state when input changes
     };
+
+    const divStyle = {backgroundColor: color, padding: "40px"};
 
     const colorChange = () => {
         return (
@@ -32,19 +36,22 @@ export default function Colors() {
                     <button type="submit">Submit</button>
                 </form>
 
-                <button onClick={()=> setColor('thistle')} className="thistleBttn">Thistle</button>
-                <button onClick={()=> setColor("khaki")} className="khakiBttn">Khaki</button>
-                <button onClick={()=> setColor("skyblue")} className="sblueBttn">Sky-Blue</button>
-                <button onClick={()=> setColor("lightgreen")} className="lgreenBttn">Light-Green</button>
-                <button onClick={()=> setColor("lightsalmon")} className="lsalmonBttn">Light-Salmon</button>
-                <br />
+                <p>Selected color: {color}</p>
+                {colorNames.map((colorName)=> (
+                    <button 
+                        style={{backgroundColor: colorName, color: "black"}}
+                        onClick={() => setColor(colorName)} 
+                        key={colorName}>
+                        {colorName}                        
+      	            </button>
+                 ))}
             </>
         )
     }
 
     return (
         <>
-            <div style={{ backgroundColor: color, padding: "40px"}}>
+            <div style={divStyle}>
                 <Numbers />
                 {colorChange()}
                 <Talker />
