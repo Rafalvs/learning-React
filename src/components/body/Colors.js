@@ -7,17 +7,29 @@ const colorNames = ['Thistle', 'Khaki', 'Skyblue', 'Lightgreen', 'Lightsalmon'];
 
 export default function Colors() {
 
-    const [color, setColor] = useState('lightblue');
-    const [inputValue, setInputValue] = useState('');
+    const [color, setColor] = useState('lightblue'); // destructuring
+    let inputValue; // will hold the value for setColor
 
     const handleSubmit = (e) => {
-        e.preventDefault(); // Prevent form submission
-        setColor(inputValue); // Update the color state with the input value
+        e.preventDefault(); // prevent form submission
+        isColor(inputValue) ? setColor(inputValue) : alert("Color Not Valid"); // update the color state (if exists) with the input value
     };
+ 
+    const handleInputChange = ( {target} ) => {
+        inputValue = target.value; // update the inputValue state when input changes
+    };
+     
+    /* works as the same as above ^
+      const handleInputChange = (e) => {
+        inputValue = e.target.value;
+    };
+    */
 
-    const handleInputChange = (e) => {
-        setInputValue(e.target.value); // Update the inputValue state when input changes
-    };
+    const isColor = (strColor) => { // function to check if the color exist
+        const s = new Option().style;
+        s.color = strColor;
+        return s.color !== ''; // if does exist, return true
+    }
 
     const divStyle = {backgroundColor: color, padding: "40px"};
 
@@ -30,8 +42,8 @@ export default function Colors() {
                         type="text"
                         id="color"
                         placeholder="Ex: Black"
-                        value={inputValue} // Use inputValue for controlled component
-                        onChange={handleInputChange} // Update inputValue state on input change
+                        value={inputValue} // use inputValue for controlled component, so color will only update onSubmit
+                        onChange={handleInputChange} // update inputValue state on input change
                     /> <br />
                     <button type="submit">Submit</button>
                 </form>
