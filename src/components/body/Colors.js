@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Numbers from "./Numbers";
 import Talker from "./Props0";
 import Products from "./Products";
+import Title from "./Title";
 
 const colorNames = ['Thistle', 'Khaki', 'Skyblue', 'Lightgreen', 'Lightsalmon'];
 
@@ -41,16 +42,17 @@ export default function Colors() {
                     <input
                         type="text"
                         id="color"
-                        placeholder="Ex: Black"
+                        placeholder="Ex: Pink"
                         value={inputValue} // use inputValue for controlled component, so color will only update onSubmit
                         onChange={handleInputChange} // update inputValue state on input change
-                    /> <br />
+                    />
+                    <br />
                     <button type="submit">Submit</button>
                 </form>
 
                 <p>Selected color: {color}</p>
                 {colorNames.map((colorName)=> (
-                    <button 
+                    <button  className="button1"
                         style={{backgroundColor: colorName, color: "black"}}
                         onClick={() => setColor(colorName)} 
                         key={colorName}>
@@ -63,7 +65,8 @@ export default function Colors() {
 
     return (
         <>
-            <div style={divStyle}>
+            <div style={divStyle} className="colors">
+                <Title />
                 <Numbers />
                 {colorChange()}
                 <Talker />
