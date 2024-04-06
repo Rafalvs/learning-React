@@ -75,6 +75,7 @@ padding: 4px;
 border: solid 1px black;
 position: absolute;
 left: 70%;
+background-color: rgb(99, 0, 0);
 }
 
 .profileBox h3 {
@@ -113,6 +114,20 @@ margin: 10px;
 border: solid black 1px;
 border-radius: 50%;
 max-width: 50%;
+}
+
+.clock {
+border-radius: 5%;
+color: white;
+background-color: rgb(99, 0, 0);
+padding: 4px;
+border: solid black 1px;
+position: absolute;
+right: 70%;
+}
+
+.clock:hover {
+background-color: rgb(71, 0, 0);
 }
 
 /**/
